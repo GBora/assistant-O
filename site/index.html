@@ -10,15 +10,32 @@
 <body ng-controller="DelenaCtrl">
 
     
+    <div class="graph-left">
+        <div ng-repeat="block in lineLeft track by $index" class="speec-block" style="height: {{block}}px; margin-left: {{$index * 20}}px;">
+            
+        </div>
+    </div>
+    
+    
     <div class="eye">
 
     </div>
     
+    <div class="graph-right">
+        <div ng-repeat="block in lineRight track by $index" class="speec-block" style="height: {{block}}px; margin-left: {{$index * 20}}px;">
+            
+        </div>
+    </div>
+    
+    
+    <div id="text-scrawl">
+        <div class="dialog" ng-repeat="line in dialog track by $index" style="color: {{line.tone}};">
+            {{line.text}}
+        </div>
+    </div>
 
 
-    <svg class="graph-right">
-          <polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" class="graph-line" />
-    </svg>
+
     
     
     <script src="../node_modules/chance/chance.js"></script>
